@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkLink</title>
+</head>
+<body>
+    <form action="/signIn" method="GET">
+        <button type="submit">Iniciar sesión con Google</button>
+    </form>
+    
+    <script>
+        const newUrl = window.location.origin + "";
+        window.history.replaceState({}, document.title, newUrl);
+
+        const expiryDateMillis = 1719524734616;
+const now = Date.now();
+
+const timeUntilExpiry = expiryDateMillis - now; // Tiempo en milisegundos hasta que expire el token
+const secondsUntilExpiry = timeUntilExpiry / 1000; // Convertir a segundos si es necesario
+const hoursUntilExpiry = secondsUntilExpiry / 60 ;
+
+console.log(`El token expirará en ${hoursUntilExpiry} horas`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .profile-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .profile-image {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    .profile-name {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .profile-email {
+      color: #888;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+      <div class="profile-container">
+        <img src="<%= data.picture %>" alt="Profile Picture" class="profile-image">
+        <div class="profile-name"><%= data.name %></div>
+        <div class="profile-email"><%= data.email %></div>
+        <form action="/revoke" method="get">
+          <button type="submit">Cerrar sesión</button>
+        </form>
+      </div>
+  <script>
+    // Remove query strings from the URL
+    const newUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, newUrl);
+  </script>
+</body>
+</html>
