@@ -19,7 +19,7 @@ const now = Date.now();
 
 const timeUntilExpiry = expiryDateMillis - now; // Tiempo en milisegundos hasta que expire el token
 const secondsUntilExpiry = timeUntilExpiry / 1000; // Convertir a segundos si es necesario
-const hoursUntilExpiry = secondsUntilExpiry / 60 ;
+const hoursUntilExpiry = secondsUntilExpiry / 60;
 
 console.log(`El token expirará en ${hoursUntilExpiry} horas`);
 

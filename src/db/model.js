@@ -32,10 +32,8 @@ async function findOAuthUserByEmail(email) {
   try {
     const user = await oauthUserModel.findOne({ email: email });
     if (user) {
-      console.log('User found:', user);
       return user;
     } else {
-      console.log('User not found');
       return null;
     }
   } catch (error) {
